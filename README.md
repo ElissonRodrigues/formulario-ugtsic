@@ -11,6 +11,7 @@ Os currículos cadastrados podem ser acessados através do endpoint /login. Por 
 - [Configuração da Base de Dados PostgreSQL](#configuração-da-base-de-dados-postgresql)
 - [Executando o Projeto](#executando-o-projeto)
 - [Endpoints](#endpoints)
+- [Registros de Eventos e Acessos (Logs)](#registros-de-eventos-e-acessos-logs)
 - [Contribuição](#contribuição)
 - [Licença](#licença)
 - [Contato](#contato)
@@ -137,6 +138,11 @@ Esse são alguns endpoints desse projeto:
 - `POST /api/cadastrar_usuario`: Esta rota é usada para cadastrar um novo usuário admistrativos. Ela é protegida por JWT e CSRF, o que significa que o cliente deve fornecer um token JWT válido no cabeçalho de autorização da solicitação e um token CSRF no cookie para acessar esta rota. A rota espera receber um objeto de usuário no corpo da solicitação com os seguintes campos: `nome`, `email`, `senha` e `tipoUsuario`.
 
 Por favor, note que outros endpoints podem ser encontrados no <b>__ main __.py</b>
+
+## Registros de Eventos e Acessos (Logs)
+Este projeto possui um sistema de registro que inclui tanto logs de erros quanto logs de acessos. Esses registros são fundamentais para monitorar e entender as atividades que ocorrem durante a execução do projeto, sendo particularmente úteis para identificar e corrigir problemas, bem como analisar o comportamento dos usuários.
+
+Os logs são gerados automaticamente e podem ser localizados no diretório "logs", que é criado após a primeira execução do projeto.
 
 ## Contribuição
 Contribuições são o que fazem a comunidade open source um lugar incrível para aprender, inspirar e criar. Qualquer contribuição que você fizer será <b>muito apreciada</b>.
