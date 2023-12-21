@@ -135,8 +135,6 @@ Esse são alguns endpoints desse projeto:
 
 - `GET /api/estatisticas`: Esta rota retorna as estatísticas do sistema. Ela é protegida por JWT e CSRF, o que significa que o cliente deve fornecer um token JWT válido no cabeçalho de autorização da solicitação e um token CSRF no cookie para acessar esta rota. As estatísticas retornadas incluem o número total de candidatos, entrevistadores e administradores no banco de dados. Se ocorrer um erro ao obter as estatísticas, a rota retornará um erro 500 com uma mensagem de erro.
 
-- `POST /api/cadastrar_usuario`: Esta rota é usada para cadastrar um novo usuário admistrativos. Ela é protegida por JWT e CSRF, o que significa que o cliente deve fornecer um token JWT válido no cabeçalho de autorização da solicitação e um token CSRF no cookie para acessar esta rota. A rota espera receber um objeto de usuário no corpo da solicitação com os seguintes campos: `nome`, `email`, `senha` e `tipoUsuario`.
-
 Por favor, note que outros endpoints podem ser encontrados no <b>__ main __.py</b>
 
 ## Registros de Eventos e Acessos (Logs)
