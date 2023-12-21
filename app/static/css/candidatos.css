@@ -1,0 +1,144 @@
+body {
+    background-color: #FAFAFA;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    padding: 50px 0;
+}
+
+#curriculos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+#curriculos-container div {
+    flex-basis: 25%;
+    box-sizing: border-box;
+    background-color: #FFF;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+#curriculos-container div h3 {
+    margin: 0;
+    color: #333;
+}
+
+#curriculos-container div button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FFF;
+    color: #333;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#view-curriculo {
+    z-index: 1;
+    border-radius: 12px;
+}
+
+#popup-info {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup-content {
+    background-color: #FFF;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    width: 80%;
+    align-items: center;
+}
+
+.close {
+    color: #333;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#load-more-button {
+    display: block;
+    margin: 20px auto;
+    background-color: #FFF;
+    color: #333;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 5px;
+    background-color: transparent; /* Sem cor de fundo */
+    color: black; /* Cor do texto preta */
+    border: 1px solid black; /* Borda preta */
+    padding: 10px 20px; /* Adiciona algum padding */
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove o sublinhado */
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer; /* Muda o cursor para um ponteiro quando você passa o mouse sobre o botão */
+    transition-duration: 0.4s; /* Adiciona uma transição suave quando o botão é passado o mouse ou clicado */
+}
+
+#logout-button:hover {
+    background-color: black; /* Muda a cor de fundo para preto quando você passa o mouse sobre o botão */
+    color: white; /* Muda a cor do texto para branco quando você passa o mouse sobre o botão */
+}
+
+@media screen and (max-width: 388px) {
+    #curriculos-container div {
+        flex-basis: 95%;
+
+    }
+
+    h1 {
+        font-size: 27px;
+        padding: 30px 0px 5px 0px;
+    }
+
+    #logout-button {
+        top: 15px;
+        right: 9px;
+        font-size: 15px;
+    }
+    
+}

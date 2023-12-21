@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Seleção de Candidatos</title>
+    <link href="{{ url_for('static', filename='css/candidatos.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>Candidatos</h1>
+    <button id="logout-button">Sair</button>
+    <div id="curriculos-container">
+        <!-- Curriculos will be dynamically loaded here -->
+    </div>
+    
+    <div id="popup-info" class="modal">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <p id="cadidato-info">#</p>
+        </div>
+    </div>
+    <button id="load-more-button">Carregar Mais</button>
+
+    <script src="{{ url_for('static', filename='js/candidatos.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>SESAP</h1>
+        <form action="/auth" method="POST" class="responsive-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" value="{{ email }}" required><br><br>
+            
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required><br><br>
+            
+            <input type="submit" value="Entrar">
+        </form>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="error-messages">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

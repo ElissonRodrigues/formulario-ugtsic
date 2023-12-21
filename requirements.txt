@@ -1,0 +1,7 @@
+flask_wtf
+pytz
+python-dotenv
+psycopg2-binary
+bcrypt
+flask_jwt_extended
+tornado

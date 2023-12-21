@@ -1,0 +1,213 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f0f0f0;
+    align-items: center;
+    justify-content: center;
+}
+
+#form-container {
+    display: flex;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    margin: 0 10px 0 0;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#recruiterFormPopup, #candidatesPopup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    
+}
+
+#recruiterFormPopup .popup-content, #candidatesPopup .popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 12px;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin: 20px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input, select {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+span {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.admin-panel {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.admin-panel .statistic {
+    margin-bottom: 20px;
+}
+
+.admin-panel h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.admin-panel h3 {
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+#status_info {
+    width: 100%;
+    box-sizing: border-box; 
+    border-radius: 5px; 
+}
+
+#status_info .messages {
+    font-size: 15px;
+}
+
+#status_info .messages .info {
+    color: #31708f; /* Cor do texto para mensagens de informação */
+    background-color: #d9edf7; /* Cor de fundo para mensagens de informação */
+    margin: 0 20px;
+}
+
+#status_info .messages .success {
+    color: #3c763d; /* Cor do texto para mensagens de sucesso */
+    background-color: #dff0d8; /* Cor de fundo para mensagens de sucesso */
+    margin: 0 20px;
+}
+
+#status_info .messages .warning {
+    color: #8a6d3b; /* Cor do texto para mensagens de aviso */
+    background-color: #fcf8e3; /* Cor de fundo para mensagens de aviso */
+    margin: 0 20px;
+}
+
+#status_info .messages .error {
+    color: #a94442; /* Cor do texto para mensagens de erro */
+    background-color: #f2dede; /* Cor de fundo para mensagens de erro */
+    margin: 0 20px;
+}
+
+#logout-button {
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    border-radius: 5px;
+    background-color: transparent; 
+    color: black; 
+    border: 1px solid black; 
+    padding: 10px 20px;
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer; 
+    transition-duration: 0.4s; 
+}
+
+#logout-button:hover {
+    background-color: black; 
+    color: white; 
+}
+
+
+@media screen and (max-width: 1000px) {
+    #recruiterFormPopup .popup-content, #candidatesPopup .popup-content {
+        width: 60%;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    #recruiterFormPopup .popup-content, #candidatesPopup .popup-content {
+        width: 80%;
+        
+    }
+
+    .admin-panel h2 {
+        font-size: 22px;
+        margin-top: 40px;
+    }
+
+    .admin-panel h3 {
+        font-size: 15px;
+
+    }
+
+    .admin-panel .statistic {
+        font-size: 15px;
+    
+    }
+}
+
+@media screen and (max-width: 461px) {
+    #recruiterFormPopup .popup-content, #candidatesPopup .popup-content {
+        width: 84%;
+    }
+    .admin-panel h2 {
+        font-size: 19px;
+        margin-top: 40px;
+    }
+
+    .admin-panel h3 {
+        font-size: 14px;
+
+    }
+
+    .admin-panel .statistic {
+        font-size: 14px;
+    
+    }
+}

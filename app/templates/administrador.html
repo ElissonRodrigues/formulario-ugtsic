@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Painel de Administração</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/admin.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-panel">
+        <h2>Painel de Administração</h2>
+        <button id="logout-button">Sair</button>
+        <div class="statistic">
+            <h3>Número de Administradores:</h3>
+            <p id="totalAdmin">Calculando...</p>
+        </div>
+        <div> 
+            <h3>Número de Recrutadores:</h3>
+            <p id="totalRecruiter">Calculando...</p>
+        </div>
+        <div class="statistic">
+            <h3>Número de candidatos:</h3>
+            <p id="totalCandidates">Calculando...</p>
+        </div>
+    </div>
+
+    <div id="form-container">
+        <button onclick="openRecruiterForm()">Cadastrar Usuário</button>
+        <button onclick="openCandidatesPage()">Visualizar Candidatos</button>
+        
+        <div id="recruiterFormPopup" style="display: none;">
+            <div class="popup-content">
+                <span onclick="closeRecruiterForm()" style="float: right; cursor: pointer;">X</span>
+                <form action="/cadastrar_usuario" method="POST">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required><br><br>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+" required><br><br>
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required><br><br>
+                    <label for="tipoUsuario">Tipo de Usuário:</label>
+                    <select id="tipoUsuario" name="tipoUsuario" required>
+                        <option value="normal">Entrevistador</option>
+                        <option value="admin">Administrador</option>
+                    </select><br><br>
+                    <button type="submit">Cadastrar</button>
+                </form>
+                <br>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div id="status_info">
+                        <p class="messages">
+                            {% for category, message in messages %}
+                            <span class="{{ category }}">{{ message }}</span>
+                            {% endfor %}
+                        </p>
+                    </div>
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+
+        <div id="candidatesPopup" style="display: none;">
+            <div class="popup-content">
+                <span onclick="closeCandidatesPage()" style="float: right; cursor: pointer;">X</span>
+                <iframe src="/candidatos" width="100%" height="500px"></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+</body>
+</html>

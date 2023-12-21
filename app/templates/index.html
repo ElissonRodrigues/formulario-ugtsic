@@ -1,0 +1,92 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário para envio de currículos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/form.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Formulário para envio de currículos</h1>
+
+    <div id="formulario">
+        <div id="instrucoes">
+            
+            <h2>Instruções</h2>
+            <p>Para se candidatar a uma vaga, preencha o formulário abaixo e anexe seu currículo.</p>
+            <p>Após o envio, seu currículo será analisado e, caso seja selecionado, entraremos em contato.</p>
+            <br>
+            <ul>
+                <li>Os campos marcados com * são obrigatórios.</li>
+                <li>Os arquivos devem ter no máximo 1MB.</li>
+                <li>Os formatos de arquivo aceitos são: .doc, .docx e .pdf.</li>
+                <li>Os arquivos devem ser nomeados com o nome do candidato.</li>
+            </ul>
+            <br>
+        </div>
+
+        <div id="campos">
+            <form id="form_curriculum" method="POST" action="{{ url_for('submit') }}" enctype="multipart/form-data">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <label for="nome">Nome: *</label>
+                <input type="text" name="nome" placeholder="Digite seu nome completo" required>
+                <br>
+                <label for="email_candidato">E-mail: *</label>
+                <input type="email" name="email_candidato" pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+" 
+                    placeholder="Digite seu email" title="informe um e-mail válido, exemplo: meuEmail@gmail.com" required>
+                <br>
+                <label for="telefone">Telefone: *</label>
+                <input type="tel" name="telefone" required pattern="\d{11}"
+                    title="Digite um telefone válido (ex: 84999999999)" placeholder="Digite seu telefone: (ex: 84999999999)">
+                <br>
+                <label for="cargo">Cargo Desejado: *</label>
+                <input type="text" id="telefone" name="cargo" placeholder="Digite seu cargo desejado" required>
+                <br>
+                <label for="escolaridade">Escolaridade: *</label>
+                <select name="escolaridade" required>
+                    <option value="Ensino Fundamental">Ensino Fundamental</option>
+                    <option value="Ensino Médio">Ensino Médio</option>
+                    <option value="Ensino Superior">Ensino Superior</option>
+                    <option value="Graduação">Graduação</option>
+                    <option value="Pós-Graduação">Pós-Graduação</option>
+                    <option value="Mestrado">Mestrado</option>
+                    <option value="Doutorado">Doutorado</option>
+                    <option value="Pós-Doutorado">Pós-Doutorado</option>
+                </select>
+                <br>
+                <label for="observacoes">Observações:</label>
+                <textarea name="observacoes" rows="4" cols="50"></textarea>
+                <br>
+                <label for="arquivo">Arquivo: *</label>
+                <input type="file" id="fileInput" name="file" accept=".doc, .docx, .pdf" style="display: none;"
+                    onchange="updateFileName()">
+                <input type="text" id="arquivo" name="arquivo" required readonly>
+                <button type="button" onclick="document.getElementById('fileInput').click()">Selecionar arquivo</button>
+                <br>
+                <button type="submit">Enviar</button>
+            </form>
+            <br>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div id="status_info">
+                    <p class="messages">
+                        {% for category, message in messages %}
+                        <span class="{{ category }}">{{ message }}</span>
+                        {% endfor %}
+                    </p>
+                </div>
+                {% endif %}
+            {% endwith %}
+            <br>    
+       </div> 
+    </div>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

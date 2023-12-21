@@ -1,0 +1,116 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 20px;
+    width: 50%;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    margin: 0 10px 0 0;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 20px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input, select {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#status_info {
+    width: 100%;
+    box-sizing: border-box; 
+    border-radius: 5px; 
+}
+
+#status_info .messages {
+    font-size: 15px;
+}
+
+#status_info .messages .info {
+    color: #31708f; /* Cor do texto para mensagens de informação */
+    background-color: #d9edf7; /* Cor de fundo para mensagens de informação */
+}
+
+#status_info .messages .success {
+    color: #3c763d; /* Cor do texto para mensagens de sucesso */
+    background-color: #dff0d8; /* Cor de fundo para mensagens de sucesso */
+}
+
+#status_info .messages .warning {
+    color: #8a6d3b; /* Cor do texto para mensagens de aviso */
+    background-color: #fcf8e3; /* Cor de fundo para mensagens de aviso */
+}
+
+#status_info .messages .error {
+    color: #a94442; /* Cor do texto para mensagens de erro */
+    background-color: #f2dede; /* Cor de fundo para mensagens de erro */
+}
+
+@media screen and (max-width: 1000px) {
+    .popup-content {
+        width: 60%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .popup-content {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 461px) {
+    .popup-content {
+        width: 84%;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+}

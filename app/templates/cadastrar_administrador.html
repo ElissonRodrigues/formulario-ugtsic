@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Administrador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/cadastrar_admin.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>Cadastrar Administrador</h1>
+    <div class="popup-content"> 
+        <form action="/cadastrar_usuario" method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="new_admin" value="True">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br><br>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+" required><br><br>
+            <label for="senha">Senha:</label>
+            <input type="text" id="senha" name="senha" required><br><br>
+            <label for="tipoUsuario">Tipo de Usuário:</label>
+            <select id="tipoUsuario" name="tipoUsuario" required>
+                <option value="admin">Administrador</option>
+            </select><br><br>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <p>Sessão expira em <span id="tempo_restante">04:00</span> minutos.</p>
+
+        <br>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div id="status_info">
+                <p class="messages">
+                    {% for category, message in messages %}
+                    <span class="{{ category }}">{{ message }}</span>
+                    {% endfor %}
+                </p>
+            </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{{ url_for('static', filename='js/cadastrar_admin.js') }}"></script>
+</body>
+</html>
