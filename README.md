@@ -88,7 +88,7 @@ Agora você deve ter a base de dados PostgreSQL configurada para o seu projeto. 
 
 Este projeto requer algumas configurações que são definidas no arquivo `.env`. Abaixo estão as variáveis de ambiente que você precisa configurar:
 
-> <b>Importante:</b> Para valores que contêm espaços no arquivo .env, certifique-se de envolvê-los em aspas duplas. Isso garante que o espaço seja interpretado corretamente como parte do valor, e não como um delimitador. Caso restem dúvidas sobre a configuração do arquivo `.env`, veja o arquivo `.env.example`.
+> <b>Importante:</b> Para valores que contêm espaços no arquivo .env, certifique-se de envolvê-los em aspas duplas. Isso garante que o espaço seja interpretado corretamente como parte do valor, e não como um delimitador. Caso restem dúvidas sobre a configuração do arquivo `.env`, veja o arquivo <a href="https://github.com/ElissonRodrigues/formulario-ugtsic/blob/147f116d289579e113add8ea011cf28a860958f4/.env.example">`.env.example`</a>.
 
 ### Login de usuario
 - `NUMERO_MAXIMO_TENTATIVAS`: Número de tentativas de login incorretas.
@@ -135,7 +135,7 @@ Esse são alguns endpoints desse projeto:
 
 - `GET /api/estatisticas`: Esta rota retorna as estatísticas do sistema. Ela é protegida por JWT e CSRF, o que significa que o cliente deve fornecer um token JWT válido no cabeçalho de autorização da solicitação e um token CSRF no cookie para acessar esta rota. As estatísticas retornadas incluem o número total de candidatos, entrevistadores e administradores no banco de dados. Se ocorrer um erro ao obter as estatísticas, a rota retornará um erro 500 com uma mensagem de erro.
 
-Por favor, note que outros endpoints podem ser encontrados no <b>__ main __.py</b>
+Por favor, note que outros endpoints podem ser encontrados no <b><a href="https://github.com/ElissonRodrigues/formulario-ugtsic/blob/147f116d289579e113add8ea011cf28a860958f4/app/__main__.py">main.py</a></b>
 
 ## Registros de Eventos e Acessos (Logs)
 Este projeto possui um sistema de registro que inclui tanto logs de erros quanto logs de acessos. Esses registros são fundamentais para monitorar e entender as atividades que ocorrem durante a execução do projeto, sendo particularmente úteis para identificar e corrigir problemas, bem como analisar o comportamento dos usuários.
@@ -147,7 +147,7 @@ Contribuições são o que fazem a comunidade open source um lugar incrível par
 
 ## Licença
 
-Distribuído sob a licença  GNU GPL. Veja `LICENSE` para mais informações.
+Distribuído sob a licença  GNU GPL. Veja <a href="https://github.com/ElissonRodrigues/formulario-ugtsic/blob/147f116d289579e113add8ea011cf28a860958f4/LICENSE">`LICENSE`</a> para mais informações.
 
 ## Contato
 
