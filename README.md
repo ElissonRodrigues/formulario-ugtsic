@@ -98,7 +98,7 @@ Este projeto requer algumas configurações que são definidas no arquivo `.env`
 
 - `NOME_REMETENTE`: Nome do remetente (pode ser o mesmo do email).
 - `EMAIL_REMENTENTE`: Email do remetente (gmail).
-- `SENHA_REMETENTE`: Senhas de app Gerada pelo Google (<a href="https://myaccount.google.com/signinoptions/two-step-verification">account.google.com</a> - Final da página).
+- `SENHA_REMETENTE`: Senhas de app Gerada pelo Google (<a href="[[https://myaccount.google.com/signinoptions/two-step-verification](https://myaccount.google.com/apppasswords)](https://myaccount.google.com/apppasswords)">account.google.com</a>).
 
 ### Dados de recebimento do email
 
